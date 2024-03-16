@@ -1,0 +1,94 @@
+:root {
+   --heightHeader: 66px;
+}
+
+* {
+   font-family: 'DigitalDiscoFine' !important;
+}
+
+body,
+html {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+}
+
+header {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 9999;
+}
+
+main {
+   height: 100%;
+}
+
+.card {
+   background-color: rgba(36, 74, 171, 0.5);
+   backdrop-filter: blur(2px);
+}
+
+.card-header {
+   font-weight: bold;
+}
+
+#jogo .card-header {
+   background-color: rgb(13, 110, 253);
+   color: rgb(255, 255, 255);
+}
+
+.h-90 {
+   height: 90% !important;
+}
+
+#bem_vindo>.opcoes .row {
+   align-items: center;
+}
+
+.fonte-negrito {
+   font-family: 'DigitalDiscoBold' !important;
+}
+
+@font-face {
+   font-family: 'DigitalDiscoFine';
+   font-style: normal;
+   font-weight: 100;
+   src: local('DigitalDisco'), url('https://fonts.cdnfonts.com/s/17845/DigitalDisco-Thin.woff') format('woff');
+}
+
+@font-face {
+   font-family: 'DigitalDiscoBold';
+   font-style: normal;
+   font-weight: 500;
+   src: local('DigitalDisco'), url('https://fonts.cdnfonts.com/s/17845/DigitalDisco.woff') format('woff');
+}
+
+.container-page {
+   height: 100vh;
+   position: fixed;
+   z-index: -1;
+}
+
+.container-page::before {
+   content: "";
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-image: url('./img/background.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   opacity: 0.6;
+}
+
+.for-click {
+   transition-duration: 0.4s;
+}
+
+.for-click:hover {
+   cursor: pointer;
+   transform: scale(1.2) rotate(4deg);
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Walking | Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mustache@4.2.0/mustache.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="imagex/png" href="./img/player-icon.png">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+    <div class="container-page"></div>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" style="--bs-bg-opacity: 0.5;">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex gap-2" style="cursor: pointer;" onclick="configurePage('#bem_vindo');">
+                    <div>
+                        <img src="./img/player-icon.png" alt="Logo" width="24" class="d-inline-block align-text-top">
+                    </div>
+                    <div class="navbar-brand fonte-negrito">
+                        Moon Walking
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a id="g" class="nav-link fonte-negrito" href="#" onclick="configurePage('#jogo');">O JOGO</a>
+                        <a id="d" class="nav-link fonte-negrito" href="#"
+                            onclick="configurePage('#desenvolvedores');">DESENVOLVEDORES</a>
+                        <a id="j" class="nav-link fonte-negrito" href="#" onclick="configurePage('#jogar');">JOGAR</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container d-flex align-items-center justify-content-center">
+        <section id="bem_vindo" class="w-100" style="display: none;">
+            <div class="row">
+                <img src="img/moon.png">
+            </div>
+            <div class="row opcoes align-items-center justify-content-center">
+                <div class="col-5" style="text-align: right;">
+                    <img class="for-click" src="img/o-jogo.png" onclick="configurePage('#jogo');">
+                </div>
+                <div class="col-1" style="text-align: center;">
+                    <img src="img/pipe.png">
+                </div>
+                <div class="col-5" style="text-align: left;">
+                    <img class="for-click" src="img/devs.png" onclick="configurePage('#desenvolvedores');">
+                </div>
+            </div>
+        </section>
+        <section id="jogo" class="h-90 w-100 mt-5" style="display: none;">
+            <div class="row align-items-center">
+                <div class="col-6 text-start">
+                    <img src="img/sobre.png">
+                </div>
+                <div class=" col-6 text-end mb-4">
+                    <img src="img/jogar.png" class="animate__animated animate__heartBeat animate__infinite"
+                        style="cursor: pointer;" onclick="configurePage('#jogar');">
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body d-grid gap-3">
+                    <div class="card">
+                        <div class="card-header">
+                            O Herói
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-3 border-end text-center">
+                                        <img src="img/player.gif">
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <span>
+                                            Este é o valente <b>MoonHead</b>.
+                                            </br>
+                                            Um garoto que nasceu com uma <i>cabeça de lua minguante</i> e foi
+                                            predestinado à encontrar todas as flores estrelas perdidas... só ele pode
+                                            salvar a
+                                            terra da devastação.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-3 border-end text-center">
+                                        <img src="img/flor.gif">
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <span>
+                                            Esta é uma rara <b>StarFlower</b>.
+                                            </br>
+                                            Uma das flores mais raras já vistas e espelhadas pela terra, elas tem o
+                                            poder de reciclar e curar o mundo e sua poluição.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            Os Desafios - Serras devastadoras
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-3 border-end text-center">
+                                        <img src="img/serra_azul_parada.gif">
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <span>
+                                            Esta é a serra <b>BlueSaw</b>.
+                                            </br>
+                                            O primeiro desafio é a serra circular chamada BlueSaw. Uma mortífera arma
+                                            que fica
+                                            estática aguardando a aproximação de qualquer pessoa.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-3 border-end text-center">
+                                        <img src="img/serra_marrom-laranja_vertical.gif">
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <span>
+                                            Esta é a serra <b>VerticalBrownSaw</b>.
+                                            </br>
+                                            Ela faz parte do segundo desafio. Ainda mais temível
+                                            que a BlueSaw esta arma pode se movimentar no sentido vertical e pegar
+                                            qualquer um que ouse desafia-la.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-3 border-end text-center">
+                                        <img src="img/serra_marrom_horizontal.gif">
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <span>
+                                            Esta é a serra <b>HorizontalBrownSaw</b>.
+                                            </br>
+                                            Ela ainda faz parte do segundo desafio. Assim como a VerticalBrownSaw e mais
+                                            temível que a BlueSaw esta arma pode se movimentar no sentido horizontal e
+                                            acabar
+                                            com qualquer um que entre em seu caminho.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-3 border-end text-center">
+                                        <img src="img/serra_verde_todos.gif">
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <span>
+                                            Esta é a serra <b>GreenSaw</b>.
+                                            </br>
+                                            O maior desafio, está serra possui lâminas afiadas que consomem que, ousar
+                                            chegar perto dela. Com seus movimentos para qualquer direções ela cumpre bem
+                                            seu objeto.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            Controles
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-3 border-end text-center align-self-center"
+                                        style="font-size: 50px;">
+                                        ⬆️➡️⬇️⬅️
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <span>
+                                            Controle pelo direcional do teclado.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            Objetivo
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-3 border-end text-center align-self-center"
+                                        style="font-size: 50px;">
+                                        ✔️
+                                    </div>
+                                    <div class="col align-self-center">
+                                        <span>
+                                            Coletar todas as flores sem atingir ou ser atingido pela serras circulares.
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="desenvolvedores" class="w-100" style="display: none;">
+            <div class="row">
+                <div class="col-6 text-center">
+                    <img src="img/edu.png" height="500px">
+                </div>
+                <div class="col-6 text-center">
+                    <img src="img/bruno.png" height="500px">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 text-center">
+                    <img class="for-click" src="img/eduardo_nome.png"
+                        onclick="window.open(`https://github.com/EduardoSilva283`,'_blank');">
+                </div>
+                <div class="col-6 text-center">
+                    <img class="for-click" src="img/bruno_nome.png"
+                        onclick="window.open(`https://github.com/brunoguez`,'_blank');">
+                </div>
+            </div>
+        </section>
+        <section id="jogar" style="display: none;">
+            <iframe src="compilado/index.html" width="1300px" height="795px"></iframe>
+        </section>
+    </main>
+
+    <script src="./scripts.js"></script>
+</body>
+
+</html>
